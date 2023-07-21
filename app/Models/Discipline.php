@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Discipline extends Model
+{
+    use HasFactory;
+
+    protected $guarded=[
+        'id',
+    ];
+
+    protected $hidden = [
+        'updated_at',
+        'created_at',
+    ];
+
+    public function disciplinesClasse()
+    {
+        return $this->hasMany(DiciplinesClasse::class);
+    }
+}
